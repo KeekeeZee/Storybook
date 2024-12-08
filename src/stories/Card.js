@@ -18,7 +18,7 @@ const Card = ({
           <img
             src={image}
             alt="Illustration"
-            className="opacity-80 max-h-full max-w-full object-contain"
+            className="opacity-80 max-h-full max-w-full object-cover"
           />
         ) : (
           <div className="w-full h-full flex flex-col justify-center items-center opacity-80 bg-white">

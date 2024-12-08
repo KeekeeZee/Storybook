@@ -6,17 +6,17 @@ const HomePage = () => {
   const cardData = [
     {
       title: "Tableau blanc",
-      description: "Libérez votre créativité en esquissant vos idées.",
-      image: "https://via.placeholder.com/150",
+      description: "Libérez votre créativité en esquissant vos idées et transformez-les en visuels captivants en quelques clics",
+      image: "https://via.placeholder.com/375x200",
       buttonLabel: "Créer",
-      buttonIcon: "circle-plus",
+      buttonIcon: "faCirclePlus",
       buttonTheme: "secondary",
       onClick: () => console.log("Créer un tableau blanc"),
     },
     {
       title: "Équipes",
       description: "Collaborez avec vos équipes pour de meilleurs résultats.",
-      image: "https://via.placeholder.com/150",
+      image: "https://via.placeholder.com/375x200",
       buttonLabel: "Gérer",
       buttonIcon: "faUserFriends",
       buttonTheme: "secondary",
@@ -25,7 +25,7 @@ const HomePage = () => {
     {
       title: "Bibliothèque",
       description: "Accédez à des ressources et des documents partagés.",
-      image: "https://via.placeholder.com/150",
+      image: "https://via.placeholder.com/375x200",
       buttonLabel: "Explorer",
       buttonIcon: "faBookOpen",
       buttonTheme: "secondary",
@@ -34,7 +34,7 @@ const HomePage = () => {
     {
       title: "Paramètres",
       description: "Personnalisez votre expérience et gérez vos paramètres.",
-      image: "https://via.placeholder.com/150",
+      image: "https://via.placeholder.com/375x200",
       buttonLabel: "Configurer",
       buttonIcon: "faCog",
       buttonTheme: "secondary",
@@ -43,7 +43,7 @@ const HomePage = () => {
     {
       title: "Paramètres",
       description: "Personnalisez votre expérience et gérez vos paramètres.",
-      image: "https://via.placeholder.com/150",
+      image: "https://via.placeholder.com/375x200",
       buttonLabel: "Configurer",
       buttonIcon: "faCog",
       buttonTheme: "secondary",
