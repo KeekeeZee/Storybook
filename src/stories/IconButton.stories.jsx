@@ -36,8 +36,7 @@ export default {
         'faHeart', 
         'faHome', 
         'faSearch', 
-        'faTrash', 
-        null,
+        'faTrash',
       ],
       description: 'Icône affichée dans le bouton.',
     },
@@ -45,6 +44,10 @@ export default {
       control: { type: 'select' },
       options: ['primary', 'secondary', 'ghost', 'transparent'],
       description: 'Thème visuel du bouton.',
+    },
+    rounded: {
+      control: { type: 'boolean' },
+      description: 'Rend le bouton complètement arrondi.',
     },
     disabled: {
       control: { type: 'boolean' },
@@ -60,5 +63,6 @@ Default.args = {
   size: 'M',
   icon: 'faCheck', // Nom de l'icône à afficher
   theme: 'primary',
+  rounded: false, // Par défaut, le bouton n'est pas complètement arrondi
   disabled: false,
 };

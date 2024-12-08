@@ -10,6 +10,7 @@ const SimpleButton = ({
   rightIcon = null,
   showLeftIcon = true, // Booléen pour afficher ou non l'icône de gauche
   showRightIcon = true, // Booléen pour afficher ou non l'icône de droite
+  rounded = false, // Booléen pour définir un bouton arrondi
   disabled = false,
   onClick = () => {},
   onMouseEnter = () => {},
@@ -19,10 +20,10 @@ const SimpleButton = ({
 
   // Classes pour les tailles
   const sizeClasses = {
-    XS: 'h-6 px-1 gap-1 text-xs rounded-[6px]',
-    S: 'h-8 px-2 gap-2 text-sm rounded-[8px]',
-    M: 'h-10 px-3 gap-3 text-base rounded-[12px]',
-    L: 'h-12 px-4 gap-4 text-lg rounded-[16px]',
+    XS: `h-6 px-1 gap-1 text-xs ${rounded ? 'rounded-full' : 'rounded-[6px]'}`,
+    S: `h-8 px-2 gap-2 text-sm ${rounded ? 'rounded-full' : 'rounded-[8px]'}`,
+    M: `h-10 px-3 gap-3 text-base ${rounded ? 'rounded-full' : 'rounded-[12px]'}`,
+    L: `h-12 px-4 gap-4 text-lg ${rounded ? 'rounded-full' : 'rounded-[16px]'}`,
   };
 
   const iconSizes = {
@@ -101,13 +102,13 @@ const SimpleButton = ({
       onClick={handleClick}
     >
       {showLeftIcon && leftIcon && (
-        <span className="">
+        <span className="mr-2">
           {getIcon(leftIcon)}
         </span>
       )}
       <span>{label}</span>
       {showRightIcon && rightIcon && (
-        <span className="">
+        <span className="ml-2">
           {getIcon(rightIcon)}
         </span>
       )}

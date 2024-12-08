@@ -6,6 +6,7 @@ const IconButton = ({
   theme = 'primary',
   size = 'M',
   icon = 'faCheck', // Nom de l'icône comme chaîne
+  rounded = false, // Booléen pour rendre le bouton complètement arrondi
   disabled = false,
   onClick = () => {},
   onMouseEnter = () => {},
@@ -15,10 +16,10 @@ const IconButton = ({
 
   // Classes pour les tailles
   const sizeClasses = {
-    XS: 'h-6 w-6 text-xs rounded-[6px]', // Taille carrée pour un bouton uniquement icône
-    S: 'h-8 w-8 text-sm rounded-[8px]',
-    M: 'h-10 w-10 text-base rounded-[12px]',
-    L: 'h-12 w-12 text-lg rounded-[16px]',
+    XS: `h-6 w-6 text-xs ${rounded ? 'rounded-full' : 'rounded-[6px]'}`,
+    S: `h-8 w-8 text-sm ${rounded ? 'rounded-full' : 'rounded-[8px]'}`,
+    M: `h-10 w-10 text-base ${rounded ? 'rounded-full' : 'rounded-[12px]'}`,
+    L: `h-12 w-12 text-lg ${rounded ? 'rounded-full' : 'rounded-[16px]'}`,
   };
 
   // Classes pour les tailles des icônes
