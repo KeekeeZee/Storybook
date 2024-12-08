@@ -11,9 +11,9 @@ const Card = ({
   onClick, // Fonction déclenchée par le bouton
 }) => {
   return (
-    <div className="p-6 bg-gray-50 rounded-2xl flex flex-col justify-start items-center gap-6">
+    <div className="bg-gray-50 rounded-2xl flex flex-col justify-start items-center gap-6">
       {/* Section image */}
-      <div className="flex justify-center items-center h-48 md:h-56 lg:h-64 bg-gray-800 rounded-t-2xl overflow-hidden">
+      <div className="flex justify-center items-center w-full h-full bg-gray-800 rounded-t-2xl overflow-hidden">
         {image ? (
           <img
             src={image}
