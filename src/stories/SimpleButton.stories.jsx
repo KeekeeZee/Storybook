@@ -2,7 +2,7 @@ import React from 'react';
 import SimpleButton from './SimpleButton';
 
 export default {
-  title: 'Components/SimpleButton',
+  title: 'Buttons/SimpleButton',
   component: SimpleButton,
   argTypes: {
     size: {

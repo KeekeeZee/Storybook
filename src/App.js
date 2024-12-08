@@ -1,26 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import './index.css';
+import React from 'react';
+import Layout from './stories/Layout';
+import HomePage from './stories/HomePage';
 
-function App() {
+const App = () => {
   return (
-    <div className="App font-sans">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout
+      variant="desktop" // ou "mobile" selon la version
+      header={<div>Header Content</div>}
+    >
+      <HomePage />
+    </Layout>
   );
-}
+};
 
 export default App;

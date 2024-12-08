@@ -15,7 +15,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  title: 'Components/IconButton',
+  title: 'Buttons/IconButton',
   component: IconButton,
   argTypes: {
     size: {

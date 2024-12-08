@@ -2,9 +2,9 @@ import React from 'react';
 
 const PageContent = ({ children }) => {
   return (
-    <main className="flex-1 p-4 overflow-y-auto">
+    <div className="p-4 bg-grey-200">
       {children}
-    </main>
+    </div>
   );
 };
 

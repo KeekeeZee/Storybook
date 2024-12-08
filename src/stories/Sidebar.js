@@ -1,19 +1,38 @@
 import React from 'react';
 import IconButton from './IconButton';
 
-const Sidebar = () => {
+const Sidebar = ({ variant = 'desktop' }) => {
+  const isMobile = variant === 'mobile';
+
   return (
-    <aside className="flex flex-col items-center w-20 bg-gray-50 py-4 space-y-4">
-        <div>
-      <IconButton icon="faPlus" theme="primary" tooltip="Créer" rounded size="L" />
-      <IconButton icon="faHome" theme="secondary" tooltip="Ma Page" rounded size="L" />
-      <IconButton icon="faChalkboard" theme="transparent" tooltip="Mes tableaux" rounded size="L" />
-      <IconButton icon="faUserFriends" theme="transparent" tooltip="Mon équipe" rounded size="L" />
-      <IconButton icon="faBookOpen" theme="transparent" tooltip="Bibliothèque" rounded size="L" />
+    <aside
+      className={`${
+        isMobile ? 'flex-row w-full justify-evenly h-16' : 'flex-col w-20 h-screen'
+      } flex bg-gray-50 py-4 ${
+        isMobile ? '' : ''
+      }`}
+    >
+      {/* Section principale */}
+      <div
+        className={`${
+          isMobile ? 'flex justify-evenly items-center w-full' : 'flex flex-col items-center space-y-4'
+        }`}
+      >
+        <IconButton icon="faPlus" theme="primary" tooltip="Créer" rounded size={isMobile ? 'M' : 'L'} />
+        <IconButton icon="faHome" theme="secondary" tooltip="Ma Page" rounded size={isMobile ? 'M' : 'L'} />
+        <IconButton icon="faChalkboard" theme="transparent" tooltip="Mes tableaux" rounded size={isMobile ? 'M' : 'L'} />
+        <IconButton icon="faUserFriends" theme="transparent" tooltip="Mon équipe" rounded size={isMobile ? 'M' : 'L'} />
+        <IconButton icon="faBookOpen" theme="transparent" tooltip="Bibliothèque" rounded size={isMobile ? 'M' : 'L'} />
       </div>
-      <div>
-      <IconButton icon="faCog" theme="transparent" tooltip="Settings" rounded size="M" />
-      <IconButton icon="faUser" theme="ghost" tooltip="Settings" rounded size="L" />
+
+      {/* Section des paramètres */}
+      <div
+        className={`${
+          isMobile ? 'hidden' : 'flex flex-col items-center space-y-4 mt-auto'
+        }`}
+      >
+        <IconButton icon="faCog" theme="transparent" tooltip="Paramètres" rounded size="M" />
+        <IconButton icon="faUser" theme="ghost" tooltip="Profil" rounded size="L" />
       </div>
     </aside>
   );
