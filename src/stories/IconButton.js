@@ -6,22 +6,23 @@ const IconButton = ({
   theme = 'primary',
   size = 'M',
   icon = 'faCheck', // Nom de l'icône comme chaîne
+  tooltip = '', // Texte du tooltip
+  rounded = false,
   disabled = false,
   onClick = () => {},
   onMouseEnter = () => {},
   onMouseLeave = () => {},
 }) => {
-  const [state, setState] = useState('default'); // État local du bouton
+  const [state, setState] = useState('default');
 
   // Classes pour les tailles
   const sizeClasses = {
-    XS: 'h-6 w-6 text-xs rounded-[6px]', // Taille carrée pour un bouton uniquement icône
-    S: 'h-8 w-8 text-sm rounded-[8px]',
-    M: 'h-10 w-10 text-base rounded-[12px]',
-    L: 'h-12 w-12 text-lg rounded-[16px]',
+    XS: `h-6 w-6 text-xs ${rounded ? 'rounded-full' : 'rounded-[6px]'}`,
+    S: `h-8 w-8 text-sm ${rounded ? 'rounded-full' : 'rounded-[8px]'}`,
+    M: `h-10 w-10 text-base ${rounded ? 'rounded-full' : 'rounded-[12px]'}`,
+    L: `h-12 w-12 text-lg ${rounded ? 'rounded-full' : 'rounded-[16px]'}`,
   };
 
-  // Classes pour les tailles des icônes
   const iconSizes = {
     XS: 'text-xs',
     S: 'text-sm',
@@ -61,7 +62,6 @@ const IconButton = ({
   const themeClass = themeStyles[theme]?.[disabled ? 'disabled' : state] || themeStyles[theme]?.['default'];
   const iconClass = iconSizes[size] || iconSizes['M'];
 
-  // Gestion des événements pour changer dynamiquement l'état
   const handleMouseEnter = (e) => {
     if (!disabled) {
       setState('hover');
@@ -83,22 +83,29 @@ const IconButton = ({
     }
   };
 
-  // Fonction pour récupérer l'icône par son nom
   const getIcon = (iconName) => {
-    const icon = Icons[iconName]; // Recherche l'icône dans les icônes importées
+    const icon = Icons[iconName];
     return icon ? <FontAwesomeIcon icon={icon} className={iconClass} /> : null;
   };
 
   return (
-    <button
-      className={`flex justify-center items-center ${sizeClass} ${themeClass}`}
-      disabled={disabled}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onClick={handleClick}
-    >
-      {icon && getIcon(icon)}
-    </button>
+    <div className="relative group">
+      {/* Tooltip */}
+      {tooltip && (
+        <div className="absolute left-14 top-1/2 -translate-y-1/2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          {tooltip}
+        </div>
+      )}
+      <button
+        className={`flex justify-center items-center ${sizeClass} ${themeClass}`}
+        disabled={disabled}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
+      >
+        {icon && getIcon(icon)}
+      </button>
+    </div>
   );
 };
 

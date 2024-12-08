@@ -2,12 +2,13 @@ import React from 'react';
 import SimpleButton from './SimpleButton';
 
 export default {
-  title: 'Components/SimpleButton',
+  title: 'Buttons/SimpleButton',
   component: SimpleButton,
   argTypes: {
     size: {
       control: { type: 'select' },
       options: ['XS', 'S', 'M', 'L'], // Options pour les tailles
+      description: 'Taille du bouton.',
     },
     leftIcon: {
       control: { type: 'select' },
@@ -72,6 +73,10 @@ export default {
       control: { type: 'boolean' },
       description: 'Affiche ou masque le label.',
     },
+    rounded: {
+      control: { type: 'boolean' },
+      description: 'Rend le bouton complètement arrondi.',
+    },
   },
 };
 
@@ -87,5 +92,6 @@ Default.args = {
   showRightIcon: true,
   showLabel: true,
   theme: 'primary',
+  rounded: false, // Par défaut, le bouton n’est pas complètement arrondi
   disabled: false,
 };
