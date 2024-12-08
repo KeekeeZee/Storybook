@@ -33,7 +33,7 @@ const Card = ({
       {/* Section contenu */}
       <div className="flex flex-col space-y-4 w-full">
         <div className="space-y-2">
-          <h2 className="text-black text-xl md:text-2xl font-bold">{title}</h2>
+          <h2 className="text-black text-xl md:text-2xl font-bold tracking-tight">{title}</h2>
           <p className="text-gray-600 text-sm md:text-base font-normal leading-relaxed">
             {description}
           </p>
