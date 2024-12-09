@@ -102,13 +102,13 @@ const SimpleButton = ({
       onClick={handleClick}
     >
       {showLeftIcon && leftIcon && (
-        <span className="mr-2">
+        <span className="">
           {getIcon(leftIcon)}
         </span>
       )}
       <span>{label}</span>
       {showRightIcon && rightIcon && (
-        <span className="ml-2">
+        <span className="">
           {getIcon(rightIcon)}
         </span>
       )}

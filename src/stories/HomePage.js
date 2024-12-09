@@ -1,16 +1,68 @@
-import React from 'react';
-import PageContent from './PageContent';
+import React from "react";
+import PageContent from "./PageContent";
+import CardGrid from "./CardGrid";
 
 const HomePage = () => {
+  const cardData = [
+    {
+      title: "Tableau blanc",
+      description: "Libérez votre créativité en esquissant vos idées et transformez-les en visuels captivants en quelques clics",
+      image: "https://via.placeholder.com/375x200",
+      buttonLabel: "Créer",
+      buttonIcon: "faCirclePlus",
+      buttonTheme: "secondary",
+      onClick: () => console.log("Créer un tableau blanc"),
+    },
+    {
+      title: "Équipes",
+      description: "Collaborez avec vos équipes pour de meilleurs résultats.",
+      image: "https://via.placeholder.com/375x200",
+      buttonLabel: "Gérer",
+      buttonIcon: "faUserFriends",
+      buttonTheme: "secondary",
+      onClick: () => console.log("Gérer les équipes"),
+    },
+    {
+      title: "Bibliothèque",
+      description: "Accédez à des ressources et des documents partagés.",
+      image: "https://via.placeholder.com/375x200",
+      buttonLabel: "Explorer",
+      buttonIcon: "faBookOpen",
+      buttonTheme: "secondary",
+      onClick: () => console.log("Explorer la bibliothèque"),
+    },
+    {
+      title: "Paramètres",
+      description: "Personnalisez votre expérience et gérez vos paramètres.",
+      image: "https://via.placeholder.com/375x200",
+      buttonLabel: "Configurer",
+      buttonIcon: "faCog",
+      buttonTheme: "secondary",
+      onClick: () => console.log("Configurer les paramètres"),
+    },
+    {
+      title: "Paramètres",
+      description: "Personnalisez votre expérience et gérez vos paramètres.",
+      image: "https://via.placeholder.com/375x200",
+      buttonLabel: "Configurer",
+      buttonIcon: "faCog",
+      buttonTheme: "secondary",
+      onClick: () => console.log("Configurer les paramètres"),
+    },
+  ];
+
   return (
     <PageContent>
       {/* Titre principal */}
       <section className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-800">Bienvenue sur votre tableau de bord</h1>
-        <p className="text-gray-600 mt-2">Voici un aperçu de vos activités et actions récentes.</p>
+        <h2 className="text-heading-2 tracking-tight">Bienvenue sur Beink</h2>
+        <p className="text-gray-600 mt-2">Explorez vos idées en quelques clics</p>
       </section>
 
-      
+      {/* Grille de cartes */}
+      <section>
+        <CardGrid cards={cardData} columns="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" gap="gap-6" />
+      </section>
     </PageContent>
   );
 };

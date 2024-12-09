@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const PageContent = ({ children }) => {
-  return (
-    <div className="p-4 bg-grey-200">
-      {children}
-    </div>
-  );
+  return <div className="bg-page-background">{children}</div>;
 };
 
 export default PageContent;

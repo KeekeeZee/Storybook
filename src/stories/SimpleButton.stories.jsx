@@ -4,27 +4,28 @@ import SimpleButton from './SimpleButton';
 export default {
   title: 'Buttons/SimpleButton',
   component: SimpleButton,
+  tags: ['autodocs'], // Optionnel, pour la documentation automatique
   argTypes: {
     size: {
       control: { type: 'select' },
-      options: ['XS', 'S', 'M', 'L'], // Options pour les tailles
+      options: ['XS', 'S', 'M', 'L'],
       description: 'Taille du bouton.',
     },
     leftIcon: {
       control: { type: 'select' },
       options: [
-        'faCheck', 
-        'faTimes', 
-        'faUser', 
-        'faArrowRight', 
-        'faArrowLeft', 
-        'faStar', 
-        'faBell', 
-        'faHeart', 
-        'faHome', 
-        'faSearch', 
+        'faCheck',
+        'faTimes',
+        'faUser',
+        'faArrowRight',
+        'faArrowLeft',
+        'faStar',
+        'faBell',
+        'faHeart',
+        'faHome',
+        'faSearch',
         'faTrash',
-        'faCirclePlus', 
+        'faCirclePlus',
         null,
       ],
       description: 'Icône affichée à gauche du texte.',
@@ -32,18 +33,18 @@ export default {
     rightIcon: {
       control: { type: 'select' },
       options: [
-        'faCheck', 
-        'faTimes', 
-        'faUser', 
-        'faArrowRight', 
-        'faArrowLeft', 
-        'faStar', 
-        'faBell', 
-        'faHeart', 
-        'faHome', 
-        'faSearch', 
+        'faCheck',
+        'faTimes',
+        'faUser',
+        'faArrowRight',
+        'faArrowLeft',
+        'faStar',
+        'faBell',
+        'faHeart',
+        'faHome',
+        'faSearch',
         'faTrash',
-        'faCirclePlus', 
+        'faCirclePlus',
         null,
       ],
       description: 'Icône affichée à droite du texte.',
@@ -54,7 +55,7 @@ export default {
     },
     theme: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'ghost', 'transparent'], // Options pour les thèmes
+      options: ['primary', 'secondary', 'ghost', 'transparent'],
       description: 'Thème visuel du bouton.',
     },
     disabled: {
@@ -80,18 +81,32 @@ export default {
   },
 };
 
-const Template = (args) => <SimpleButton {...args} />;
+export const Default = {
+  args: {
+    size: 'M',
+    label: 'Label',
+    leftIcon: 'faUser',
+    rightIcon: 'faCheck',
+    showLeftIcon: true,
+    showRightIcon: true,
+    showLabel: true,
+    theme: 'primary',
+    rounded: false,
+    disabled: false,
+  },
+};
 
-export const Default = Template.bind({});
-Default.args = {
-  size: 'M',
-  label: 'Label',
-  leftIcon: 'faUser', // Nom de l'icône à gauche
-  rightIcon: 'faCheck', // Nom de l'icône à droite
-  showLeftIcon: true,
-  showRightIcon: true,
-  showLabel: true,
-  theme: 'primary',
-  rounded: false, // Par défaut, le bouton n’est pas complètement arrondi
-  disabled: false,
+export const CreateNew = {
+  args: {
+    size: "L",
+    label: "Créer",
+    leftIcon: "faCirclePlus",
+    rightIcon: null,
+    showLeftIcon: true,
+    showRightIcon: true,
+    showLabel: true,
+    theme: "primary",
+    rounded: true,
+    disabled: false
+  }
 };

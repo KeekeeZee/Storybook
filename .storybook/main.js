@@ -6,8 +6,7 @@ const config = {
     "@storybook/preset-create-react-app",
     "@storybook/addon-onboarding",
     "@storybook/addon-essentials",
-    "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
+    "@storybook/addon-interactions"
   ],
 
   framework: {
@@ -15,7 +14,7 @@ const config = {
     options: {},
   },
 
-  staticDirs: ["..\\public"],
+  staticDirs: ["../public"],
 
   docs: {},
 
