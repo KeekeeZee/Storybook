@@ -56,36 +56,3 @@ export const Default = {
     buttonTheme: 'secondary',
   },
 };
-
-export const SecondaryButton = {
-  args: {
-    title: 'Bibliothèque',
-    description: 'Accédez à des ressources et des documents partagés.',
-    image: 'https://via.placeholder.com/150', // Exemple d'image
-    buttonLabel: 'Explorer',
-    buttonIcon: 'faBookOpen',
-    buttonTheme: 'secondary',
-  },
-};
-
-export const NoImage = {
-  args: {
-    title: 'Équipes',
-    description: 'Collaborez avec vos équipes pour de meilleurs résultats.',
-    image: null, // Pas d'image
-    buttonLabel: 'Gérer',
-    buttonIcon: 'faUserFriends',
-    buttonTheme: 'ghost',
-  },
-};
-
-export const TransparentButton = {
-  args: {
-    title: 'Paramètres',
-    description: 'Personnalisez votre expérience et gérez vos paramètres.',
-    image: 'https://via.placeholder.com/150',
-    buttonLabel: 'Configurer',
-    buttonIcon: 'faCog',
-    buttonTheme: 'transparent',
-  },
-};

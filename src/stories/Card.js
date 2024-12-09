@@ -1,5 +1,5 @@
 import React from "react";
-import IconButton from "./IconButton"; // Réutilisation de ton composant bouton d'icône
+import SimpleButton from "./SimpleButton"; // Réutilisation de ton composant bouton d'icône
 
 const Card = ({
   title = "Titre par défaut",
@@ -13,12 +13,12 @@ const Card = ({
   return (
     <div className="bg-gray-50 rounded-2xl flex flex-col justify-start items-center gap-6">
       {/* Section image */}
-      <div className="flex justify-center items-center w-full h-full bg-gray-800 rounded-t-2xl overflow-hidden">
+      <div className="flex justify-center items-center w-full max-h-fit bg-gray-800 rounded-t-2xl overflow-hidden object-cover">
         {image ? (
           <img
             src={image}
             alt="Illustration"
-            className="opacity-80 max-h-full max-w-full object-cover"
+            className="opacity-80 h-full w-full"
           />
         ) : (
           <div className="w-full h-full flex flex-col justify-center items-center opacity-80 bg-white">
@@ -31,20 +31,25 @@ const Card = ({
       </div>
 
       {/* Section contenu */}
-      <div className="flex flex-col space-y-4 w-full">
+      <div className="flex flex-col w-full p-4">
         <div className="space-y-2">
-          <h2 className="text-black text-xl md:text-2xl font-bold tracking-tight">{title}</h2>
+          <h2 className="text-black text-xl md:text-2xl font-bold tracking-tight">
+            {title}
+          </h2>
           <p className="text-gray-600 text-sm md:text-base font-normal leading-relaxed">
             {description}
           </p>
         </div>
         <div>
-          <IconButton
-            label={buttonLabel}
-            icon={buttonIcon}
-            theme={buttonTheme}
-            size="M"
-            onClick={onClick}
+          <SimpleButton
+            label="Créer"
+            leftIcon="faCirclePlus"
+            rightIcon={null}
+            rounded
+            showLabel
+            showLeftIcon
+            size="L"
+            theme="primary"
           />
         </div>
       </div>
