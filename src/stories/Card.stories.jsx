@@ -56,3 +56,14 @@ export const Default = {
     buttonTheme: 'secondary',
   },
 };
+
+export const Projet = {
+  args: {
+    title: "Projet",
+    description: "Rangez en un seul endroit les projets",
+    image: "https://via.placeholder.com/150",
+    buttonLabel: "Créer projet",
+    buttonIcon: "circle-plus",
+    buttonTheme: "secondary"
+  }
+};
